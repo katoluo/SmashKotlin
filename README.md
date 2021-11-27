@@ -1,2 +1,2 @@
 # SmashKotlin
-Kotlin 什物
+记录 零碎时间学习kotlin的笔记
