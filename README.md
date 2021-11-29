@@ -11,4 +11,5 @@
 - You can override a property’s getter and setter
 - You can override a val property in the superclass with a var property in the subclass
 - You can override a property’s type with one of the superclass version’s subtypes
+- An overridden function or property stays open
 
