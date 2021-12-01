@@ -1,0 +1,72 @@
+
+
+- Interfaces are similar to abstract classes in that they can’t be instantiated, and they can define abstract or concrete functions and properties, but there’s one key difference:  **a class can implement multiple interfaces, but can only inherit from a single direct superclass**
+
+```kotlin
+interface A {
+    fun myFun() {
+        println("A")
+    }
+}
+interface B {
+    fun myFun() {
+        println("B")
+    }
+}
+class son : parent(), interfaceOne, interfaceTwo {
+    override fun myFnn() {	// 当实现的多个接口中具有相同的属性或函数，那么必须实现自己
+        super<A>.myFun()
+        super<B>.myFun()
+        
+        println("son")
+    }
+}
+```
+
+
+
+
+
+- 接口的函数可以是抽象和具体的，抽象函数无需像抽象类的抽象函数必须在前面添加**abstract**关键字，不能有花括号，只需类似声明一样；具体函数跟正常函数一样，不强制强求实现接口的类重写这个具体函数，只需要一个花括号就表示具体函数了
+
+  >抽象类：不能实例化，可以具有抽象和具体的函数，抽象函数必须添加**abstract**关键字，不然必须添加花括号表示具体函数
+
+
+
+- 属性：接口的属性只能在body中声明（定义？），这是唯一的方法；不像抽象类也可以在主构造函数中定义自己的属性
+
+
+
+- 接口的属性不能使用初始化器直接初始化，但是可以使用自定义的访问器**getter**来返回*value*
+
+  > 在接口中**不能保存状态**，因为**不存在幕后字段**，这里我也不清楚，是否存在幕后字段跟能否直接使用初始化器有着直接关系，（中文官方文档：字段仅作为属性的一部分在内存中保存其值时使用，如果至少一个访问器使用默认实现或在访问器中引用 *field* 标识符，将会为该属性生成一个幕后字段），是否拥有幕后字段影响着对应的JAVA是否真的存在这个变量
+
+```kotlin
+interface Roamable {
+    val velocity: Int
+    get() = 20
+    set(value) {
+        println("只要不要尝试去引用属性的幕后字段就可以编译通过啦.")
+    }
+} 
+// 不能使用如下
+interface Roamable {
+    var velocity: Int
+    get() = 20
+    set(value) {
+        field = value	// 不存在幕后字段，不能修改属性的潜在的值(field)
+    }
+}
+```
+
+
+
+- 在抽象类中函数有三种：抽象函数(必须重写)、**open**具体函数(可被子类重写)、具体函数(不能被重写)；接口的函数分为抽象函数(必须由实现类实现)和具体函数(可重写)
+
+
+
+- 如果实现接口的类时抽象类，那么它可以选择自己实现函数和属性，也可以将实现的责任传递给该抽象类的子类来实现
+
+
+
+- 具体类不能包含抽象的函数和属性，所以必须实现所继承的所有的抽象函数和属性
