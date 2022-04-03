@@ -13,3 +13,6 @@
 - You can override a property’s type with one of the superclass version’s subtypes
 - An overridden function or property stays open
 
+#### 扩展函数
+- 静态解析，不存在多态那种情况
+- 当类成员方法和扩展函数一样时，始终执行的是成员方法
