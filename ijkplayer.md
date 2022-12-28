@@ -6,3 +6,5 @@
 - [ffmpeg播放rtsp视频流花屏解决办法](https://blog.csdn.net/sz76211822/article/details/87797475)
 
 - [ijkplayer中遇到的问题汇总](https://www.jianshu.com/p/496257563f69)
+
+- [ffmpeg播放rtsp视频流花屏解决办法](https://blog.csdn.net/sz76211822/article/details/87797475)
