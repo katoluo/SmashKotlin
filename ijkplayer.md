@@ -8,3 +8,5 @@
 - [ijkplayer中遇到的问题汇总](https://www.jianshu.com/p/496257563f69)
 
 - [ffmpeg播放rtsp视频流花屏解决办法](https://blog.csdn.net/sz76211822/article/details/87797475)
+
+- [Ubuntu 编译 哔哩哔哩 IJKPlayer so库，并支持RTSP](https://blog.csdn.net/EthanCo/article/details/125271541)
